@@ -1,5 +1,7 @@
 package io.erehsawsaltul.springdatajpa;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -39,8 +41,15 @@ class SpringdatajpaApplicationTests {
 		 * result.setPrice(3600d); productRepository.save(result);
 		 */
 		
-		productRepository.findAll().forEach(p->{
-			System.out.println(p);
-		});	
+		/*
+		 * productRepository.findAll().forEach(p->{ System.out.println(p); });
+		 */
+		
+		/*
+		 * List<Product> byName = productRepository.findByName("Casio Solar Watch");
+		 * byName.forEach(p->{ System.out.println(p); });
+		 */
+		
+		System.out.println(productRepository.findByNameAndPrice("Casio Solar Watch", 1010.55d));
 	}
 }
